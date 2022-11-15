@@ -1,4 +1,4 @@
-package microservices.resources;
+package microservices.hrworker.resources;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import microservices.entities.Worker;
-import microservices.repositories.WorkerRepository;
+import microservices.hrworker.entities.Worker;
+import microservices.hrworker.repositories.WorkerRepository;
 
 @RestController
 @RequestMapping(value = "/workers")

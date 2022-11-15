@@ -1,4 +1,4 @@
-package microservices.resources;
+package microservices.hrpayroll.resources;
 
 import java.io.Serializable;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import microservices.entities.Payment;
-import microservices.service.PaymentService;
+import microservices.hrpayroll.entities.Payment;
+import microservices.hrpayroll.service.PaymentService;
 
 @RestController
 @RequestMapping(value = "/payments" )

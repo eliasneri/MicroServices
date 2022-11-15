@@ -1,4 +1,4 @@
-package microservices.entities;
+package microservices.hrworker.entities;
 
 import java.io.Serializable;
 import java.util.Objects;

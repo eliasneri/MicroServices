@@ -1,14 +1,16 @@
-package microservices;
+package microservices.hrworker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HrPayrollApplication {
+public class HrWorkerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HrPayrollApplication.class, args);
-		System.out.println("Api PayRoll Started - Dev. By Elias Neri - 11/2022");
+		SpringApplication.run(HrWorkerApplication.class, args);
+		
+		System.out.println("Created by Elias Neri - 11/2022");
 	}
+	
 
 }

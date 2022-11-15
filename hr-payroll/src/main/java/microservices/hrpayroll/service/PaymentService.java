@@ -1,8 +1,8 @@
-package microservices.service;
+package microservices.hrpayroll.service;
 
 import org.springframework.stereotype.Service;
 
-import microservices.entities.Payment;
+import microservices.hrpayroll.entities.Payment;
 
 @Service
 public class PaymentService {

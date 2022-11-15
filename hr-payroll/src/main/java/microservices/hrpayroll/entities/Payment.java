@@ -1,4 +1,4 @@
-package microservices.entities;
+package microservices.hrpayroll.entities;
 
 import java.io.Serializable;
 
