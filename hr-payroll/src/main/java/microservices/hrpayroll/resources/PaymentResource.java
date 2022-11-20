@@ -2,6 +2,8 @@ package microservices.hrpayroll.resources;
 
 import java.io.Serializable;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +19,16 @@ import microservices.hrpayroll.service.PaymentService;
 public class PaymentResource implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+		
 	@Autowired
 	private PaymentService service;
 	
 	@GetMapping(value = "/{workerId}/days/{days}")
 	public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days){
-		Payment payment = service.getPayment(workerId, days);
-		return ResponseEntity.ok(payment);
+		
+			Payment payment = service.getPayment(workerId, days);
+			return ResponseEntity.ok(payment);
+		
 	}
 	
 	
