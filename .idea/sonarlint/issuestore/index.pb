@@ -9,3 +9,7 @@ A
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 B
 hr-payroll/pom.xml,c\2\c2876b45d187d8cb7f68f334d254c9498362c0aa
+z
+Jhr-payroll/src/main/java/microservices/hrpayroll/HrPayrollApplication.java,9\7\97669d8d71ef1af79d391db56142307794a0c402
+
+Ohr-payroll/src/main/java/microservices/hrpayroll/resources/PaymentResource.java,c\b\cbe606de7d1df8513ffd3877221187f1b95e1ba5
