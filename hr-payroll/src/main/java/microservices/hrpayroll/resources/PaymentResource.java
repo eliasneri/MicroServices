@@ -23,8 +23,8 @@ public class PaymentResource implements Serializable {
 	@Autowired
 	private PaymentService service;
 
-	@HystrixCommand(fallbackMethod = "getPaymentAlternative")
 	@GetMapping(value = "/{workerId}/days/{days}")
+	@HystrixCommand(fallbackMethod="getPaymentAlternative")
 	public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days){
 			Payment payment = service.getPayment(workerId, days);
 			return ResponseEntity.ok(payment);
