@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import microservices.hrpayroll.entities.Payment;
 import microservices.hrpayroll.service.PaymentService;
 
@@ -23,15 +22,16 @@ public class PaymentResource implements Serializable {
 	@Autowired
 	private PaymentService service;
 
+	@CircuitBreaker(name = "workeroff", fallbackMethod = "getPaymentAlternative")
 	@GetMapping(value = "/{workerId}/days/{days}")
-	@HystrixCommand(fallbackMethod="getPaymentAlternative")
 	public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days){
 			Payment payment = service.getPayment(workerId, days);
 			return ResponseEntity.ok(payment);
 	}
 
-	public ResponseEntity<Payment> getPaymentAlternative(Long workerId, Integer days) {
-		Payment payment = new Payment("Brann", 400.0, days);
+	@SuppressWarnings("unused")
+	private ResponseEntity<Payment> getPaymentAlternative(Long workerId, Integer days, Throwable e) {
+		Payment payment = new Payment("ERROR TO CONNECTION HR-WORK", 0.0, days);
 		return ResponseEntity.ok(payment);
 	}
 

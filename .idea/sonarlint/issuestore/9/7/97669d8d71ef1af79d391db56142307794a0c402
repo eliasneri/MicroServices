@@ -1,2 +1,4 @@
 
-T	java:S106"9Replace this use of System.out or System.err by a logger.(ÅŸ±)8¯‹òĞ0
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ÅŸ±)8¯‹òĞ0
+q
+java:S1128"TRemove this unused import 'org.springframework.cloud.netflix.hystrix.EnableHystrix'.(Ç©ä­8¯éÁŠÒ0

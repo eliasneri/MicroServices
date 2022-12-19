@@ -20,7 +20,8 @@ A segunda API, é implementada utilizando o Hibernate e JPA, este microservice, 
 * Ribbon load balancing 
 * Feign
 * Eureka
-* Hystrix Zull
+* (Hystrix) --Circuit Breaker - Resilience 4J 
+* Gateway Zuul
 * JWT Token
 * Docker
 * IDE IntelliJ

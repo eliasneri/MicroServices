@@ -22,16 +22,11 @@ public class PaymentService {
 		// Com o FeignClient não precisa utilizar essa MAP
 		
 			
-		try {
+		
 			Worker worker = workerFeignClient.findById(workerId).getBody();
 			return new Payment(worker.getname(), worker.getDailyIncome(), days);
 			
-		} catch (RuntimeException e) {
-			System.out.println("-- ERRO: houve um erro ao fazer a requisição!!");
-			
-		}
 		
-		return new Payment();
 		
 		
 	}

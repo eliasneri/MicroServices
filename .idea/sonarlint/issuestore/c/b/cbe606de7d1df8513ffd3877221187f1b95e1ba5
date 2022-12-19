@@ -1,5 +1,9 @@
 
 D
-java:S1948")Make "service" transient or serializable.(ÌíÄêøÿÿÿÿ
+java:S1948")Make "service" transient or serializable.(ÌíÄêøÿÿÿÿ
 J
 java:S1172!"/Remove this unused method parameter "workerId".(µß°ıÿÿÿÿ
+y
+java:S1128"\Remove this unused import 'io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker'.(›èÌÇ8â–ÈŠÒ0
+v
+java:S1128"[Remove this unused import 'com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand'.(şÌ—êşÿÿÿÿ
