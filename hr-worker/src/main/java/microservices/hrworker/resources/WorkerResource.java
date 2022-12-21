@@ -43,18 +43,8 @@ public class WorkerResource implements Serializable{
 	@GetMapping(value = "/{id}")
 	@Transactional(readOnly = true)
 	public ResponseEntity<Worker> findById(@PathVariable Long id){
-		
-		
-		/*
-		try {
-			Thread.sleep(3000L);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		*/
-		
-		
-		log.info("PORT = " + env.getProperty("local.server.port"));
+
+		log.info("Load Balance PORT = " + env.getProperty("local.server.port"));
 		
 		Worker obj = repository.findById(id).get();
 		return ResponseEntity.ok(obj);

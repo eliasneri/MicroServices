@@ -1,5 +1,9 @@
 
+r
+java:S36551"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ˆšÜæüÿÿÿÿ8ß¾Ë³Ó0
 ;
 java:S1948"%Make "env" transient or serializable.(«ª“ø
-W
-java:S3457/"AFormat specifiers should be used instead of string concatenation.(þ½Í¶
+N
+java:S1948 ",Make "repository" transient or serializable.(¬ˆ¥‘úÿÿÿÿ8ñ¾Ë³Ó0
+V
+java:S3457/"AFormat specifiers should be used instead of string concatenation.(‹ð×d

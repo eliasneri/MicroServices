@@ -20,9 +20,7 @@ public class PaymentService {
 		// Map<String, String> uriVariables = new HashMap<>();
 		// uriVariables.put("id", ""+workerId);
 		// Com o FeignClient não precisa utilizar essa MAP
-		
-			
-		
+
 			Worker worker = workerFeignClient.findById(workerId).getBody();
 			return new Payment(worker.getname(), worker.getDailyIncome(), days);
 			
