@@ -1,8 +1,7 @@
 package microservices.hrworker.resources;
 
-import java.io.Serializable;
-import java.util.List;
-
+import microservices.hrworker.entities.Worker;
+import microservices.hrworker.repositories.WorkerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +13,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import microservices.hrworker.entities.Worker;
-import microservices.hrworker.repositories.WorkerRepository;
+import java.io.Serializable;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/workers")
 public class WorkerResource implements Serializable{
 	private static final long serialVersionUID = 1L;
-	
+
 	private static Logger log = LoggerFactory.getLogger(WorkerResource.class);
-	
-	
+
 	@Autowired
 	private Environment env;
 	
@@ -43,6 +41,13 @@ public class WorkerResource implements Serializable{
 	@GetMapping(value = "/{id}")
 	@Transactional(readOnly = true)
 	public ResponseEntity<Worker> findById(@PathVariable Long id){
+
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 
 		log.info("Load Balance PORT = " + env.getProperty("local.server.port"));
 		
