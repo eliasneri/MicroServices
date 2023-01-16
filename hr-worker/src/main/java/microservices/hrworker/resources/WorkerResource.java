@@ -5,6 +5,7 @@ import microservices.hrworker.repositories.WorkerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,9 +24,12 @@ public class WorkerResource implements Serializable{
 
 	private static Logger log = LoggerFactory.getLogger(WorkerResource.class);
 
+	@Value("${test.config}")
+	private String testConfig;
+
 	@Autowired
 	private Environment env;
-	
+
 	@Autowired
 	private WorkerRepository repository;
 	
@@ -36,24 +40,30 @@ public class WorkerResource implements Serializable{
 		return ResponseEntity.ok(list);
 		
 	}
-	
-	
+
 	@GetMapping(value = "/{id}")
 	@Transactional(readOnly = true)
 	public ResponseEntity<Worker> findById(@PathVariable Long id){
 
+		/* Para simular o TimeOut
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
+		 */
 
-		log.info("Load Balance PORT = " + env.getProperty("local.server.port"));
-		
 		Worker obj = repository.findById(id).get();
+		log.info("Load Balance PORT = " + env.getProperty("local.server.port"));
 		return ResponseEntity.ok(obj);
 		
+	}
+	@GetMapping(value = "/configs")
+	public ResponseEntity<Void> getConfigs() {
+		log.info("CONFIG -> " + testConfig);
+		return ResponseEntity.noContent().build();
+
 	}
 	
 	
