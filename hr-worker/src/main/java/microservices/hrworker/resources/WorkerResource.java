@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RefreshScope
 @RestController
@@ -62,9 +64,12 @@ public class WorkerResource implements Serializable{
 		
 	}
 	@GetMapping(value = "/configs")
-	public ResponseEntity<Void> getConfigs() {
+	public ResponseEntity<Map<String, String>> getConfigs() {
 		log.info("CONFIG -> " + testConfig);
-		return ResponseEntity.noContent().build();
+			Map<String, String> map = new HashMap<>();
+			map.put("Sucess", "ok");
+			map.put("On GitHub: ", testConfig);
+		return ResponseEntity.ok(map);
 
 	}
 	
