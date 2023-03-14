@@ -2,6 +2,7 @@ package microservices.hrworker.resources;
 
 import microservices.hrworker.entities.Worker;
 import microservices.hrworker.repositories.WorkerRepository;
+import microservices.hrworker.utils.ConvertLGPD;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +32,12 @@ public class WorkerResource implements Serializable{
 
 	@Value("${test.config}")
 	private String testConfig;
+
+	@Value("${database.name}")
+	private String dataBase;
+
+	@Value("${database.login}")
+	private String login;
 
 	@Autowired
 	private Environment env;
@@ -65,11 +73,17 @@ public class WorkerResource implements Serializable{
 	}
 	@GetMapping(value = "/configs")
 	public ResponseEntity<Map<String, String>> getConfigs() {
-		log.info("CONFIG -> " + testConfig);
-			Map<String, String> map = new HashMap<>();
+	ConvertLGPD conv = new ConvertLGPD();
+	log.info("CONFIG -> " + testConfig);
+			Map<String, String> map = new LinkedHashMap<>();
 			map.put("Sucess", "ok");
 			map.put("On GitHub: ", testConfig);
+			map.put("Database: ", dataBase);
+			map.put("Texto: ", "Elias Neri");
+			map.put("Oculto: ", conv.transformsChar("Elias Neri"));
+
 		return ResponseEntity.ok(map);
+
 
 	}
 	
