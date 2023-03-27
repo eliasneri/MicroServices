@@ -10,12 +10,26 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @SpringBootApplication
 public class EurekaServerApplication {
 
+	private static boolean statusEureka = false;
 	private static Logger log = LoggerFactory.getLogger(EurekaServerApplication.class);
 	
 	public static void main(String[] args) {
 						
-		SpringApplication.run(EurekaServerApplication.class, args);
-		log.info("Started EUREKA SERVER!!! " );
+		try {
+		
+			SpringApplication.run(EurekaServerApplication.class, args);
+			log.info("EurekaServer / Registry: STARTED!!" );
+			statusEureka = true;
+
+		} catch (Exception e) {
+			log.error("EurekaServer/Registry NOT initialize");
+			e.printStackTrace();
+		
+		}
+	}
+
+	public static boolean isStatusEureka() {
+		return EurekaServerApplication.isStatusEureka();
 	}
 
 }
