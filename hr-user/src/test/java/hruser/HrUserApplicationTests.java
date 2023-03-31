@@ -1,10 +1,10 @@
-package microservices.hruser;
+package hruser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HrConfigServer1ApplicationTests {
+class HrUserApplicationTests {
 
 	@Test
 	void contextLoads() {

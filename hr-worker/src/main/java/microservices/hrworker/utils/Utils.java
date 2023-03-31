@@ -26,13 +26,13 @@ public class Utils implements Serializable {
 
     private static String transformChars(String origin) {
         String newString = "";
-        int qtdChars = origin.length();
+        int qtdChars = origin.length() -1;
         int qtdeReserv = 0;
         char character;
         int qtdview = 3;
 
         if (origin != null && !origin.equals("") && qtdChars >=2) {
-            qtdChars = qtdChars - qtdview;
+
             if (qtdChars >= 0) {
                 if (qtdChars > 4) {
                         qtdeReserv = (qtdChars - qtdview);
