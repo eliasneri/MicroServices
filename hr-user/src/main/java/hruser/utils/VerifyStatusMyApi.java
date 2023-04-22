@@ -3,7 +3,6 @@ package hruser.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 
 import java.io.Serializable;
 
@@ -45,11 +44,11 @@ public class VerifyStatusMyApi implements Serializable {
 
     }
 
-    private static String returnString(boolean viewlog) {
+    public static String returnString(boolean viewlog) {
         String str = "not loaded parameters on API Config Server";
         if (!viewlog) {
-                   str = "Api  name:  " + nameApi
-                   str += "\r\n"
+                   str = "Api  name:  " + nameApi;
+                   str += "\r\n";
                    str += "Java Version: " + javaVersion + "\n";
                    str += "Database H2: " + pathH2;
         }
