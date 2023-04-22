@@ -1,4 +1,4 @@
-package hruser.controllers;
+package hruser.resources;
 
 import hruser.utils.VerifyStatusMyApi;
 import org.springframework.beans.factory.annotation.Value;
