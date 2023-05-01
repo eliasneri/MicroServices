@@ -25,13 +25,11 @@ public class HrUserApplication  implements CommandLineRunner {
 
 	}
 
-
 	@GetMapping(value = "/")
 	public String returnZero() {
 		String str = VerifyStatusMyApi.verifyStatusMyApi(true);
 		return str;
 		}
-
 
 	@Override
 	public void run(String... args) throws Exception {
