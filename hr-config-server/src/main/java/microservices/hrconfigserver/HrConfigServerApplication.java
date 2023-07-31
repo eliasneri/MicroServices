@@ -23,7 +23,7 @@ public class HrConfigServerApplication implements CommandLineRunner {
 
 		try {
 			SpringApplication.run(HrConfigServerApplication.class, args);
-			log.info("HR-Config-Server STARTED SUCESS!!!");
+			log.info("HR-Config-Server STARTED SUCCESS!!!");
 		} catch (RuntimeException e) {
 			log.info("ERRO!!!");
 			e.printStackTrace();
@@ -33,7 +33,7 @@ public class HrConfigServerApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// System.out.println("USERNAME = " + userName);
+		System.out.println("USERNAME = " + userName);
 		// para resolver autenticação com token no git
 		// https://mycyberuniverse.com/how-fix-fatal-authentication-failed-for-https-github-com.html
 
