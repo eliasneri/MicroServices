@@ -20,19 +20,11 @@ A segunda API, é implementada utilizando o Hibernate e JPA, este microservice, 
 * Ribbon load balancing 
 * Feign
 * Eureka
-* (Hystrix) --Circuit Breaker - Resilience 4J 
+* (Hystrix)  
 * Gateway Zuul
 * JWT Token
 * Docker
 * IDE IntelliJ
 * IDE STS (Spring Tool Suite)
 * GitHub
-
-### Notas Importantes sobre dependências:
-Para que o projeto seja executada como proposto, foi utilizada as tecnologias citadas acima, mas é importante resaltar, que data da composição deste documento, 10/12/2022 algumas dependências foram substituídas. 
-
-* Hystrix.............> Resliience4J
-* Ribbon..............> Spring Cloud Load Balancer
-* Zuul 1...............> Spring Cloud Gateway
-* Archaius 1........> Spring Cloud Config
 
