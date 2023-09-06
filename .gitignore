@@ -27,8 +27,7 @@ hs_err_pid*
 
 ### IntelliJ ###
 .idea
-.properties
-.yaml
+.settings
 
 
 
