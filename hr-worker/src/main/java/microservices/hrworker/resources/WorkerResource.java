@@ -27,15 +27,6 @@ public class WorkerResource implements Serializable{
 
 	private static Logger log = LoggerFactory.getLogger(WorkerResource.class);
 
-	@Value("${test.config}")
-	private String testConfig;
-
-	@Value("${database.name}")
-	private String dataBase;
-
-	@Value("${database.login}")
-	private String login;
-
 	@Autowired
 	private Environment env;
 
@@ -74,19 +65,12 @@ public class WorkerResource implements Serializable{
 	@GetMapping(value = "/configs")
 	public ResponseEntity<Map<String, String>> getConfigs() {
 
-		log.info("CONFIG -> " + testConfig);
+		log.info("CONFIG -> " + env.getProperty("spring.profiles.active"));
 			Map<String, String> map = new LinkedHashMap<>();
 			map.put("Sucess", "ok");
-			map.put("On GitHub: ", testConfig);
-			map.put("Database: ", dataBase);
 			map.put("Texto: ", "Elias Neri");
-			map.put("Oculto: ", utils.encriptString(testConfig).getStringEncoding());
-
 		return ResponseEntity.ok(map);
 
 
 	}
-	
-	
-
 }
