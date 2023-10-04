@@ -1,8 +1,9 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="01 - HrConfigServerApplication" type="Application" factoryName="Application">
     <envs>
+      <env name="GITHUB_PASS" value="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" />
+      <env name="GITHUB_REPO" value="https://github.com/eliasneri/mscourse-config" />
       <env name="GITHUB_USER" value="eliasneri" />
-      <env name="GITHUB_PASS" value="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" />
     </envs>
     <option name="MAIN_CLASS_NAME" value="microservices.hrconfigserver.HrConfigServerApplication" />
     <module name="hr-config-server" />

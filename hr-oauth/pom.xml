@@ -11,7 +11,7 @@
 	<groupId>MicroServices</groupId>
 	<artifactId>hr-oauth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hr-user</name>
+	<name>hr-oauth</name>
 	<description>hr-oauth</description>
 	<properties>
 		<java.version>11</java.version>

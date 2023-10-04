@@ -10,7 +10,7 @@ import java.io.Serializable;
 @RestController
 public class ResourceInfo implements Serializable {
 
-    @Value("${test.config}")
+    @Value("${spring.profiles.active}")
     private String test;
 
     @GetMapping("/info")

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="EntryPointsManager">
     <writeAnnotations>
@@ -14,9 +15,9 @@
         <option value="$PROJECT_DIR$/hr-worker/pom.xml" />
         <option value="$PROJECT_DIR$/hr-api-gateway-zuul/pom.xml" />
         <option value="$PROJECT_DIR$/hr-config-server/pom.xml" />
-        <option value="$PROJECT_DIR$/hr-user/pom.xml" />
         <option value="$PROJECT_DIR$/hr-ouath/pom.xml" />
         <option value="$PROJECT_DIR$/hr-oauth/pom.xml" />
+        <option value="$PROJECT_DIR$/hr-user/pom.xml" />
       </list>
     </option>
   </component>

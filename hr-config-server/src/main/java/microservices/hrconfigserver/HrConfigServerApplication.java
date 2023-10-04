@@ -16,7 +16,7 @@ public class HrConfigServerApplication implements CommandLineRunner {
 
 	private static Logger log = LoggerFactory.getLogger(HrConfigServerApplication.class);
 
-	@Value("${spring.cloud.config.server.git.username}")
+	@Value("${spring.cloud.config.server.git.username} - ${spring.cloud.config.server.git.uri}")
 	private String userName;
 
 	public static void main(String[] args) {
@@ -33,7 +33,7 @@ public class HrConfigServerApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("USERNAME = " + userName);
+		// System.out.println("USERNAME = " + userName);
 		// para resolver autenticação com token no git
 		// https://mycyberuniverse.com/how-fix-fatal-authentication-failed-for-https-github-com.html
 

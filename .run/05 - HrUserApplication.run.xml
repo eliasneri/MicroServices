@@ -1,5 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="05 - HrUserApplication" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../mytools/Java/graalvm-jdk-17.0.8+9.1" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
     <option name="MAIN_CLASS_NAME" value="hruser.HrUserApplication" />
     <module name="hr-user" />
     <extension name="coverage">
